@@ -1,8 +1,13 @@
 import java.util.*
 
 fun main() {
-    val coffee  = CoffeeMachine(Scanner(System.`in`))
-    val price = coffee.request()
-    println(price)
+
+/*    val espressoCoffee = EspressoMachine(Scanner(System.`in`))
+    val espresso = espressoCoffee.request()
+    println(espresso.drink())*/
+
+    val coffeeFiltered = FilteredCoffeeMachine(Scanner(System.`in`))
+    val filtered = coffeeFiltered.request()
+    println(filtered.drink())
 }
 

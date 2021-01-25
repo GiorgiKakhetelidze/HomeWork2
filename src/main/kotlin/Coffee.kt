@@ -1,9 +1,13 @@
-open class Coffee(sugar : Sugar, milk : Milk) {
-    var price : Double
-    init {
-        if(sugar.price + milk.price == 0.0)
-            price = Constants.basePrice
-        else
-            price = sugar.price + milk.price
+abstract class Coffee(private val sugar: Sugar) {
+
+    open val price: Double = if (sugar.price == 0.0)
+        BASE_PRICE_COFFEE
+    else
+        sugar.price + BASE_PRICE_COFFEE
+
+    companion object {
+        const val BASE_PRICE_COFFEE = 1.0
     }
+
+    abstract fun drink()
 }
